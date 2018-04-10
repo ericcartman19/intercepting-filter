@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
  * para filtrarla
  *
  */
-@WebFilter("/browserFilter")
+@WebFilter("/*")
 public class BrowserFilter implements Filter {
 
 
