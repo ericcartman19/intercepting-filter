@@ -35,6 +35,7 @@ public class BrowserFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
 		String usertAgentHeader = ((HttpServletRequest) request).getHeader("User-Agent");
+		System.out.println("usertAgentHeader = \n" + usertAgentHeader);
 		// usamos contains en vez de equals, pq este parametro contiene otra informacion
 		// ademas del navegador
 		if(usertAgentHeader.contains("Chrome")) {
@@ -44,7 +45,6 @@ public class BrowserFilter implements Filter {
 			dispatcher.forward(request, response);
 		}
 		
-		chain.doFilter(request, response);
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
